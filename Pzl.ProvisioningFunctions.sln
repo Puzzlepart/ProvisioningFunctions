@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pzl.ProvisioningFunctions", "Pzl.ProvisioningFunctions\Pzl.ProvisioningFunctions.csproj", "{947A5AF4-6A0B-4843-9662-15E17F2088D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{947A5AF4-6A0B-4843-9662-15E17F2088D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947A5AF4-6A0B-4843-9662-15E17F2088D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947A5AF4-6A0B-4843-9662-15E17F2088D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947A5AF4-6A0B-4843-9662-15E17F2088D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE064672-94BC-4095-8F80-10CD045EBA41}
+	EndGlobalSection
+EndGlobal

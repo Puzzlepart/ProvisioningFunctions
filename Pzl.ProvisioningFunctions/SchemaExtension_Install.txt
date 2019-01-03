@@ -1,0 +1,39 @@
+﻿1. Graph Explorer - https://developer.microsoft.com/en-us/graph/graph-explorer
+2. POST https://graph.microsoft.com/v1.0/schemaExtensions
+
+Payload:
+Bytt ut appid
+
+{
+	"id": "CollaborationMetadata",
+	"description": "Schema describing extra metadata for an Office 365 Group",
+	"targetTypes": [
+		"Group"
+	],
+	"owner": "<appid>",
+	"properties": [
+		{
+			"name": "GroupType",
+			"type": "String"
+		},
+		{
+			"name": "Responsible",
+			"type": "String"
+		},
+		{
+			"name": "StartDate",
+			"type": "DateTime"
+		},
+		{
+			"name": "EndDate",
+			"type": "DateTime"
+		}
+	]
+}
+
+3. PATCH https://graph.microsoft.com/v1.0/schemaExtensions/<schemaid>
+
+{
+	"owner" : "<appid>"
+	"status" : "Available"
+}

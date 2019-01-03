@@ -1,0 +1,9 @@
+﻿http://anthonychu.ca/post/restful-apis-swagger-openapi-azure-functions/
+
+https://github.com/Azure/azure-webjobs-sdk-script/issues/292
+
+https://blog.kloud.com.au/2017/06/13/azure-functions-with-swagger/
+
+Swagger to Yaml
+https://stackoverflow.com/questions/32730224/convert-swagger-json-to-raml-yaml
+	http://editor.swagger.io/#/
