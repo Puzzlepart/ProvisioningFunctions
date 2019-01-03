@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Cumulus.Monads.Helpers.Certificate
+namespace Pzl.ProvisioningFunctions.Helpers.Certificate
 {
     public class Helpers
     {

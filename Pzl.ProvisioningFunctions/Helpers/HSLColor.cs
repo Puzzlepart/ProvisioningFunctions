@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace Cumulus.Monads.Helpers
+namespace Pzl.ProvisioningFunctions.Helpers
 {
     internal class HSLColor
     {

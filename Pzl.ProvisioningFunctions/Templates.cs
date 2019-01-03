@@ -9,7 +9,7 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using System.ComponentModel.DataAnnotations;
 
-namespace Cumulus.Monads
+namespace Pzl.ProvisioningFunctions
 {
     /*
     public static class Templates

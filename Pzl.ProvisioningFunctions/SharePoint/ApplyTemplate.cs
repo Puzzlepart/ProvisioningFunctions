@@ -18,9 +18,9 @@ using OfficeDevPnP.Core.Framework.Provisioning.Model;
 using OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers;
 using OfficeDevPnP.Core.Framework.Provisioning.Providers;
 using OfficeDevPnP.Core.Framework.Provisioning.Providers.Xml;
-using Cumulus.Monads.Helpers;
+using Pzl.ProvisioningFunctions.Helpers;
 
-namespace Cumulus.Monads.SharePoint
+namespace Pzl.ProvisioningFunctions.SharePoint
 {
     public static class ApplyTemplate
     {

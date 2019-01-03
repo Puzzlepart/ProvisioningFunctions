@@ -15,9 +15,9 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.SharePoint.Client;
 using OfficeDevPnP.Core.Utilities;
-using Cumulus.Monads.Helpers;
+using Pzl.ProvisioningFunctions.Helpers;
 
-namespace Cumulus.Monads.SharePoint
+namespace Pzl.ProvisioningFunctions.SharePoint
 {
     public static class SetSiteColor
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Cumulus.Monads.Helpers.Certificate
+namespace Pzl.ProvisioningFunctions.Helpers.Certificate
 {
     internal class RSAParameterTraits
     {

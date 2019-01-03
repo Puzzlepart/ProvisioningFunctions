@@ -10,9 +10,9 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.SharePoint.Client;
 using Microsoft.SharePoint.Client.Taxonomy;
-using Cumulus.Monads.Helpers;
+using Pzl.ProvisioningFunctions.Helpers;
 
-namespace Cumulus.Monads.SharePoint
+namespace Pzl.ProvisioningFunctions.SharePoint
 {
     public static class GetTermProperty
     {

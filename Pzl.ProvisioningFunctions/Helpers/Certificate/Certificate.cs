@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Cumulus.Monads.Helpers.Certificate
+namespace Pzl.ProvisioningFunctions.Helpers.Certificate
 {
     public class Certificate
     {

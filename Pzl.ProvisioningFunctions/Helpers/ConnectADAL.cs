@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using HttpUtility = System.Web.HttpUtility;
 
-namespace Cumulus.Monads.Helpers
+namespace Pzl.ProvisioningFunctions.Helpers
 {
     enum GraphEndpoint
     {

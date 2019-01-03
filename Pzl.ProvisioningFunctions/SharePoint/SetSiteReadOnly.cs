@@ -10,11 +10,11 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.SharePoint.Client;
-using Cumulus.Monads.Helpers;
+using Pzl.ProvisioningFunctions.Helpers;
 using Microsoft.SharePoint.Client.InformationPolicy;
 using System.Collections.Generic;
 
-namespace Cumulus.Monads.SharePoint
+namespace Pzl.ProvisioningFunctions.SharePoint
 {
     public static class SetSiteReadOnly
     {

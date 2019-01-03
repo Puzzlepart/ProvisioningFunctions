@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Cumulus.Monads.Helpers
+namespace Pzl.ProvisioningFunctions.Helpers
 {
     public static class HttpClientExtensions
     {

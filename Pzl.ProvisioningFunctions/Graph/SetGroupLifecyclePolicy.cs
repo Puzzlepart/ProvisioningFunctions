@@ -12,9 +12,9 @@ using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Cumulus.Monads.Helpers;
+using Pzl.ProvisioningFunctions.Helpers;
 
-namespace Cumulus.Monads.Graph
+namespace Pzl.ProvisioningFunctions.Graph
 {
     //TODO: Change to proper GraphClient support once classification moves from Beta endpoint
     public static class SetLifecyclePolicy

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cumulus.Monads
+namespace Pzl.ProvisioningFunctions
 {
     public class Result<T>
     {

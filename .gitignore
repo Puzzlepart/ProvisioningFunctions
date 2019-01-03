@@ -298,4 +298,4 @@ __pycache__/
 # should be stored in the .pubxml.user file.
 
 # End of https://www.gitignore.io/api/visualstudio
-Cumulus.Monads/Properties/PublishProfiles
+Pzl.ProvisioningFunctions/Properties/PublishProfiles

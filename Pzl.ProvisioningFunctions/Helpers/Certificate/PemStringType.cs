@@ -1,4 +1,4 @@
-namespace Cumulus.Monads.Helpers.Certificate
+namespace Pzl.ProvisioningFunctions.Helpers.Certificate
 {
     public enum PemStringType
     {

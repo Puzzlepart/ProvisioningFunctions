@@ -11,9 +11,9 @@ using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Online.SharePoint.TenantAdministration;
 using Microsoft.Online.SharePoint.TenantManagement;
 using Microsoft.SharePoint.Client;
-using Cumulus.Monads.Helpers;
+using Pzl.ProvisioningFunctions.Helpers;
 
-namespace Cumulus.Monads.SharePoint
+namespace Pzl.ProvisioningFunctions.SharePoint
 {
     public static class SetSiteSharing
     {

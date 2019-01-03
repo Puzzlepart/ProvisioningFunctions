@@ -15,7 +15,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 
-namespace Cumulus.Monads
+namespace Pzl.ProvisioningFunctions
 {
     public static class Swagger
     {

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 
-namespace Cumulus.Monads.Helpers.Certificate
+namespace Pzl.ProvisioningFunctions.Helpers.Certificate
 {
     public class Crypto
     {

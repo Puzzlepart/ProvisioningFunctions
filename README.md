@@ -111,7 +111,7 @@ In order to get the actual functions into the Function App you have to connect t
 
 ![img](images/deployment-options.png)
 
-Point to the repository where you have _Cumulus.Monads_, and once saved the Function App should start to fetch the code, compile and deploy it.
+Point to the repository where you have _Pzl.ProvisioningFunctions_, and once saved the Function App should start to fetch the code, compile and deploy it.
 
 ![img](images/code-repo.png)
 

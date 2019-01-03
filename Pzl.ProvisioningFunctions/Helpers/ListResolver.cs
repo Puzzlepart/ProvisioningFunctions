@@ -5,7 +5,7 @@ using OfficeDevPnP.Core.Framework.Provisioning.Model;
 using OfficeDevPnP.Core.Framework.Provisioning.ObjectHandlers;
 using OfficeDevPnP.Core.Utilities;
 
-namespace Cumulus.Monads.Helpers
+namespace Pzl.ProvisioningFunctions.Helpers
 {
     public class ListResolver
     {

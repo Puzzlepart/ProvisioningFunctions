@@ -13,10 +13,10 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Graph;
-using Cumulus.Monads.Helpers;
+using Pzl.ProvisioningFunctions.Helpers;
 using Group = Microsoft.Graph.Group;
 using System.Linq;
-namespace Cumulus.Monads.Graph
+namespace Pzl.ProvisioningFunctions.Graph
 {
     public static class DeleteO365GroupAndSPSite
     {
