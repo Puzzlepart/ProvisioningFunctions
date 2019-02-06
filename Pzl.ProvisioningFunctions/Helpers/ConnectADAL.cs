@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Microsoft.SharePoint.Client;
 using System.Security.Cryptography.X509Certificates;
@@ -175,6 +176,19 @@ namespace Pzl.ProvisioningFunctions.Helpers
                 try
                 {
                     token = await authenticationContext.AcquireTokenAsync(resourceUri, cac);
+                    var privateKey = (RSACryptoServiceProvider)cac.Certificate.PrivateKey;
+                    string uniqueKeyContainerName = privateKey.CspKeyContainerInfo.UniqueKeyContainerName;
+                    cac.Certificate.Reset();
+                    var path = Environment.GetEnvironmentVariable("ProgramData");
+                    if (string.IsNullOrEmpty(path)) path = @"C:\ProgramData";
+                    try
+                    {
+                        System.IO.File.Delete(string.Format(@"{0}\Microsoft\Crypto\RSA\MachineKeys\{1}", path, uniqueKeyContainerName));
+                    }
+                    catch (Exception)
+                    {
+                        // best effort cleanup
+                    }
                 }
                 catch (Exception ex)
                 {

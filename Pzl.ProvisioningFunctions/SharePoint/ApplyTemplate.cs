@@ -79,9 +79,7 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                     }
                 }
 
-                provisioningTemplate.Connector = provider.Connector;
-
-                TokenReplaceCustomAction(provisioningTemplate, clientContext.Web);
+                provisioningTemplate.Connector = provider.Connector;               
 
                 ProvisioningTemplateApplyingInformation applyingInformation = new ProvisioningTemplateApplyingInformation()
                 {
@@ -116,23 +114,6 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 {
                     Content = new ObjectContent<string>(e.Message, new JsonMediaTypeFormatter())
                 });
-            }
-        }
-
-        private static void TokenReplaceCustomAction(ProvisioningTemplate provisioningTemplate, Web web)
-        {
-            // List patch until PnP is updated
-            if (provisioningTemplate.ClientSidePages == null) return;
-            var tokenParser = new TokenParser(web, provisioningTemplate);
-            foreach (var action in provisioningTemplate.CustomActions.SiteCustomActions)
-            {
-                if (action.ClientSideComponentProperties != null)
-                    action.ClientSideComponentProperties = tokenParser.ParseString(action.ClientSideComponentProperties);
-            }
-            foreach (var action in provisioningTemplate.CustomActions.WebCustomActions)
-            {
-                if (action.ClientSideComponentProperties != null)
-                    action.ClientSideComponentProperties = tokenParser.ParseString(action.ClientSideComponentProperties);
             }
         }
 

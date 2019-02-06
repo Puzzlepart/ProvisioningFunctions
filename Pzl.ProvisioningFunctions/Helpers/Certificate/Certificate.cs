@@ -30,7 +30,7 @@ namespace Pzl.ProvisioningFunctions.Helpers.Certificate
             var certBuffer = Helpers.GetBytesFromPEM(publicCert, PemStringType.Certificate);
             var keyBuffer = Helpers.GetBytesFromPEM(privateKey, PemStringType.RsaPrivateKey);
 
-            var certificate = new X509Certificate2(certBuffer, password);
+            var certificate = new X509Certificate2(certBuffer, password, X509KeyStorageFlags.MachineKeySet);
 
             var prov = Crypto.DecodeRsaPrivateKey(keyBuffer);
             certificate.PrivateKey = prov;
