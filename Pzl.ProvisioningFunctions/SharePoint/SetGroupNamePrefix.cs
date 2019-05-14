@@ -59,7 +59,6 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 associatedVisitorGroup.Title = associatedVisitorGroupTitle;
                 associatedVisitorGroup.Update();
 
-                web.Update();
                 clientContext.ExecuteQueryRetry();
 
                 return await Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
