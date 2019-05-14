@@ -65,7 +65,11 @@ namespace Pzl.ProvisioningFunctions.SharePoint
 
                 return await Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
                 {
-                    Content = new ObjectContent<SetGroupNamePrefixResponse>(new SetGroupNamePrefixResponse { }, new JsonMediaTypeFormatter())
+                    Content = new ObjectContent<SetGroupNamePrefixResponse>(new SetGroupNamePrefixResponse {
+                        AssociatedOwnerGroupTitle = associatedOwnerGroupTitle,
+                        AssociatedMemberGroupTitle = associatedMemberGroupTitle,
+                        AssociatedVisitorGroupTitle = associatedVisitorGroupTitle,
+                    }, new JsonMediaTypeFormatter())
                 });
             }
             catch (Exception e)
@@ -88,6 +92,10 @@ namespace Pzl.ProvisioningFunctions.SharePoint
             public string Prefix { get; set; }
         }
 
-        public class SetGroupNamePrefixResponse { }
+        public class SetGroupNamePrefixResponse {
+            public string AssociatedOwnerGroupTitle { get; set; }
+            public string AssociatedMemberGroupTitle { get; set; }
+            public string AssociatedVisitorGroupTitle { get; set; }
+        }
     }
 }
