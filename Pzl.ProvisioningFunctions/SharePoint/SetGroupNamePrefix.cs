@@ -44,23 +44,22 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 clientContext.Load(associatedVisitorGroup);
                 clientContext.ExecuteQueryRetry();
 
-                var associatedOwnerGroupTitle = $"{request.Prefix}: ${associatedOwnerGroup.Title}";
+                var associatedOwnerGroupTitle = $"({request.Prefix}) {associatedOwnerGroup.Title}";
                 log.Info($"Setting title of AssociatedOwnerGroup to {associatedOwnerGroupTitle}.");
                 associatedOwnerGroup.Title = associatedOwnerGroupTitle;
                 associatedOwnerGroup.Update();
 
-                var associatedMemberGroupTitle = $"{request.Prefix}: ${associatedMemberGroup.Title}";
+                var associatedMemberGroupTitle = $"({request.Prefix}) {associatedMemberGroup.Title}";
                 log.Info($"Setting title of AssociatedOwnerGroup to {associatedMemberGroupTitle}.");
                 associatedMemberGroup.Title = associatedMemberGroupTitle;
                 associatedMemberGroup.Update();
 
-                var associatedVisitorGroupTitle = $"{request.Prefix}: ${associatedVisitorGroup.Title}";
+                var associatedVisitorGroupTitle = $"({request.Prefix}) {associatedVisitorGroup.Title}";
                 log.Info($"Setting title of AssociatedOwnerGroup to {associatedVisitorGroupTitle}.");
                 associatedVisitorGroup.Title = associatedVisitorGroupTitle;
                 associatedVisitorGroup.Update();
 
                 web.Update();
-
                 clientContext.ExecuteQueryRetry();
 
                 return await Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
