@@ -39,27 +39,27 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 var associatedOwnerGroup = web.AssociatedOwnerGroup;
                 var associatedMemberGroup = web.AssociatedMemberGroup;
                 var associatedVisitorGroup = web.AssociatedVisitorGroup;
-                clientContext.Load(associatedOwnerGroup);
-                clientContext.Load(associatedMemberGroup);
-                clientContext.Load(associatedVisitorGroup);
-                clientContext.ExecuteQueryRetry();
+                clientContext.Load(associatedOwnerGroup, group => group.Title);
+                clientContext.Load(associatedMemberGroup, group => group.Title);
+                clientContext.Load(associatedVisitorGroup, group => group.Title);
+                clientContext.ExecuteQuery();
 
                 var associatedOwnerGroupTitle = $"({request.Prefix}) {associatedOwnerGroup.Title}";
                 log.Info($"Setting title of AssociatedOwnerGroup to {associatedOwnerGroupTitle}.");
-                associatedOwnerGroup.Title = associatedOwnerGroupTitle;
-                associatedOwnerGroup.Update();
+                web.AssociatedOwnerGroup.Title = associatedOwnerGroupTitle;
+                web.AssociatedOwnerGroup.Update();
 
                 var associatedMemberGroupTitle = $"({request.Prefix}) {associatedMemberGroup.Title}";
                 log.Info($"Setting title of AssociatedOwnerGroup to {associatedMemberGroupTitle}.");
-                associatedMemberGroup.Title = associatedMemberGroupTitle;
-                associatedMemberGroup.Update();
+                web.AssociatedOwnerGroup.Title = associatedMemberGroupTitle;
+                web.AssociatedOwnerGroup.Update();
 
                 var associatedVisitorGroupTitle = $"({request.Prefix}) {associatedVisitorGroup.Title}";
                 log.Info($"Setting title of AssociatedOwnerGroup to {associatedVisitorGroupTitle}.");
-                associatedVisitorGroup.Title = associatedVisitorGroupTitle;
-                associatedVisitorGroup.Update();
+                web.AssociatedVisitorGroup.Title = associatedVisitorGroupTitle;
+                web.AssociatedVisitorGroup.Update();
 
-                clientContext.ExecuteQueryRetry();
+                clientContext.ExecuteQuery();
 
                 return await Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
                 {
