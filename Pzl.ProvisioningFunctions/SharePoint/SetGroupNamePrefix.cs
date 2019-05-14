@@ -51,8 +51,8 @@ namespace Pzl.ProvisioningFunctions.SharePoint
 
                 var associatedMemberGroupTitle = $"({request.Prefix}) {associatedMemberGroup.Title}";
                 log.Info($"Setting title of AssociatedOwnerGroup to {associatedMemberGroupTitle}.");
-                web.AssociatedOwnerGroup.Title = associatedMemberGroupTitle;
-                web.AssociatedOwnerGroup.Update();
+                web.AssociatedMemberGroup.Title = associatedMemberGroupTitle;
+                web.AssociatedMemberGroup.Update();
 
                 var associatedVisitorGroupTitle = $"({request.Prefix}) {associatedVisitorGroup.Title}";
                 log.Info($"Setting title of AssociatedOwnerGroup to {associatedVisitorGroupTitle}.");
