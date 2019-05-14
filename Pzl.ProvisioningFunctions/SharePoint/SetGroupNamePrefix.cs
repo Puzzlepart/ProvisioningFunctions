@@ -20,7 +20,7 @@ namespace Pzl.ProvisioningFunctions.SharePoint
         [FunctionName("SetGroupNamePrefix")]
         [ResponseType(typeof(SetGroupNamePrefixResponse))]
         [Display(Name = "Set group name prefix", Description = "")]
-        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "get")]SetGroupNamePrefixRequest request, TraceWriter log)
+        public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Function, "post")]SetGroupNamePrefixRequest request, TraceWriter log)
         {
             try
             {
