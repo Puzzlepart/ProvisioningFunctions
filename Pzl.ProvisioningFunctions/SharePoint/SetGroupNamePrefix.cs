@@ -73,9 +73,9 @@ namespace Pzl.ProvisioningFunctions.SharePoint
             catch (Exception e)
             {
                 log.Error($"Error: {e.Message }\n\n{e.StackTrace}");
-                return await Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
+                return await Task.FromResult(new HttpResponseMessage(HttpStatusCode.InternalServerError)
                 {
-                    Content = new ObjectContent<SetGroupNamePrefixResponse>(new SetGroupNamePrefixResponse { }, new JsonMediaTypeFormatter())
+                    Content = new ObjectContent<SetGroupNamePrefixResponse>(new SetGroupNamePrefixResponse { Message = e.Message }, new JsonMediaTypeFormatter())
                 });
             }
         }
@@ -91,6 +91,7 @@ namespace Pzl.ProvisioningFunctions.SharePoint
         }
 
         public class SetGroupNamePrefixResponse {
+            public string Message { get; set; }
             public string AssociatedOwnerGroupTitle { get; set; }
             public string AssociatedMemberGroupTitle { get; set; }
             public string AssociatedVisitorGroupTitle { get; set; }
