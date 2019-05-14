@@ -39,22 +39,29 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 var associatedOwnerGroup = web.AssociatedOwnerGroup;
                 var associatedMemberGroup = web.AssociatedMemberGroup;
                 var associatedVisitorGroup = web.AssociatedVisitorGroup;
-                web.Context.Load(associatedOwnerGroup);
-                web.Context.Load(associatedMemberGroup);
-                web.Context.Load(associatedVisitorGroup);
-                web.Context.ExecuteQueryRetry();
+                clientContext.Load(associatedOwnerGroup);
+                clientContext.Load(associatedMemberGroup);
+                clientContext.Load(associatedVisitorGroup);
+                clientContext.ExecuteQueryRetry();
 
-                associatedOwnerGroup.Title = $"{request.Prefix}: ${associatedOwnerGroup.Title}";
-                associatedMemberGroup.Title = $"{request.Prefix}: ${associatedMemberGroup.Title}";
-                associatedVisitorGroup.Title = $"{request.Prefix}: ${associatedVisitorGroup.Title}";
-
+                var associatedOwnerGroupTitle = $"{request.Prefix}: ${associatedOwnerGroup.Title}";
+                log.Info($"Setting title of AssociatedOwnerGroup to {associatedOwnerGroupTitle}.");
+                associatedOwnerGroup.Title = associatedOwnerGroupTitle;
                 associatedOwnerGroup.Update();
+
+                var associatedMemberGroupTitle = $"{request.Prefix}: ${associatedMemberGroup.Title}";
+                log.Info($"Setting title of AssociatedOwnerGroup to {associatedMemberGroupTitle}.");
+                associatedMemberGroup.Title = associatedMemberGroupTitle;
                 associatedMemberGroup.Update();
+
+                var associatedVisitorGroupTitle = $"{request.Prefix}: ${associatedVisitorGroup.Title}";
+                log.Info($"Setting title of AssociatedOwnerGroup to {associatedVisitorGroupTitle}.");
+                associatedVisitorGroup.Title = associatedVisitorGroupTitle;
                 associatedVisitorGroup.Update();
 
                 web.Update();
 
-                web.Context.ExecuteQueryRetry();
+                clientContext.ExecuteQueryRetry();
 
                 return await Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
                 {
