@@ -45,7 +45,7 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 clientContext.ExecuteQuery();
 
                 var associatedOwnerGroupTitle = $"({request.Prefix}) {associatedOwnerGroup.Title}";
-                if (!associatedOwnerGroup.Title.StartsWith(request.Prefix))
+                if (!associatedOwnerGroup.Title.StartsWith($"({request.Prefix})"))
                 {
                     log.Info($"Setting title of AssociatedOwnerGroup to {associatedOwnerGroupTitle}.");
                     web.AssociatedOwnerGroup.Title = associatedOwnerGroupTitle;
@@ -53,7 +53,7 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 }
 
                 var associatedMemberGroupTitle = $"({request.Prefix}) {associatedMemberGroup.Title}";
-                if (!associatedMemberGroup.Title.StartsWith(request.Prefix))
+                if (!associatedMemberGroup.Title.StartsWith($"({request.Prefix})"))
                 {
                     log.Info($"Setting title of AssociatedOwnerGroup to {associatedMemberGroupTitle}.");
                     web.AssociatedMemberGroup.Title = associatedMemberGroupTitle;
@@ -61,7 +61,7 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 }
 
                 var associatedVisitorGroupTitle = $"({request.Prefix}) {associatedVisitorGroup.Title}";
-                if (!associatedVisitorGroup.Title.StartsWith(request.Prefix))
+                if (!associatedVisitorGroup.Title.StartsWith($"({request.Prefix})"))
                 {
                     log.Info($"Setting title of AssociatedOwnerGroup to {associatedVisitorGroupTitle}.");
                     web.AssociatedVisitorGroup.Title = associatedVisitorGroupTitle;
