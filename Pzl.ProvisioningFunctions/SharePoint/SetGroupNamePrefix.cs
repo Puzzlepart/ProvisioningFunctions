@@ -45,21 +45,33 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 clientContext.ExecuteQuery();
 
                 var associatedOwnerGroupTitle = $"({request.Prefix}) {associatedOwnerGroup.Title}";
-                log.Info($"Setting title of AssociatedOwnerGroup to {associatedOwnerGroupTitle}.");
-                web.AssociatedOwnerGroup.Title = associatedOwnerGroupTitle;
-                web.AssociatedOwnerGroup.Update();
+                if (!associatedOwnerGroup.Title.StartsWith(request.Prefix))
+                {
+                    log.Info($"Setting title of AssociatedOwnerGroup to {associatedOwnerGroupTitle}.");
+                    web.AssociatedOwnerGroup.Title = associatedOwnerGroupTitle;
+                    web.AssociatedOwnerGroup.Update();
+                }
 
                 var associatedMemberGroupTitle = $"({request.Prefix}) {associatedMemberGroup.Title}";
-                log.Info($"Setting title of AssociatedOwnerGroup to {associatedMemberGroupTitle}.");
-                web.AssociatedMemberGroup.Title = associatedMemberGroupTitle;
-                web.AssociatedMemberGroup.Update();
+                if (!associatedMemberGroup.Title.StartsWith(request.Prefix))
+                {
+                    log.Info($"Setting title of AssociatedOwnerGroup to {associatedMemberGroupTitle}.");
+                    web.AssociatedMemberGroup.Title = associatedMemberGroupTitle;
+                    web.AssociatedMemberGroup.Update();
+                }
 
                 var associatedVisitorGroupTitle = $"({request.Prefix}) {associatedVisitorGroup.Title}";
-                log.Info($"Setting title of AssociatedOwnerGroup to {associatedVisitorGroupTitle}.");
-                web.AssociatedVisitorGroup.Title = associatedVisitorGroupTitle;
-                web.AssociatedVisitorGroup.Update();
+                if (!associatedVisitorGroup.Title.StartsWith(request.Prefix))
+                {
+                    log.Info($"Setting title of AssociatedOwnerGroup to {associatedVisitorGroupTitle}.");
+                    web.AssociatedVisitorGroup.Title = associatedVisitorGroupTitle;
+                    web.AssociatedVisitorGroup.Update();
+                }
 
-                clientContext.ExecuteQuery();
+                if (clientContext.HasPendingRequest)
+                {
+                    clientContext.ExecuteQuery();
+                }
 
                 return await Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
                 {
