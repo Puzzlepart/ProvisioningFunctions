@@ -44,25 +44,28 @@ namespace Pzl.ProvisioningFunctions.SharePoint
                 clientContext.Load(associatedVisitorGroup, group => group.Title);
                 clientContext.ExecuteQuery();
 
-                var associatedOwnerGroupTitle = $"({request.Prefix}) {associatedOwnerGroup.Title}";
+                var associatedOwnerGroupTitle = string.Empty;
                 if (!associatedOwnerGroup.Title.StartsWith($"({request.Prefix})"))
                 {
+                    associatedOwnerGroupTitle = $"({request.Prefix}) {associatedOwnerGroup.Title}";
                     log.Info($"Setting title of AssociatedOwnerGroup to {associatedOwnerGroupTitle}.");
                     web.AssociatedOwnerGroup.Title = associatedOwnerGroupTitle;
                     web.AssociatedOwnerGroup.Update();
                 }
 
-                var associatedMemberGroupTitle = $"({request.Prefix}) {associatedMemberGroup.Title}";
+                var associatedMemberGroupTitle = string.Empty;
                 if (!associatedMemberGroup.Title.StartsWith($"({request.Prefix})"))
                 {
+                    associatedMemberGroupTitle = $"({request.Prefix}) {associatedMemberGroup.Title}";
                     log.Info($"Setting title of AssociatedOwnerGroup to {associatedMemberGroupTitle}.");
                     web.AssociatedMemberGroup.Title = associatedMemberGroupTitle;
                     web.AssociatedMemberGroup.Update();
                 }
 
-                var associatedVisitorGroupTitle = $"({request.Prefix}) {associatedVisitorGroup.Title}";
+                var associatedVisitorGroupTitle = string.Empty;
                 if (!associatedVisitorGroup.Title.StartsWith($"({request.Prefix})"))
                 {
+                    associatedVisitorGroupTitle = $"({request.Prefix}) {associatedVisitorGroup.Title}";
                     log.Info($"Setting title of AssociatedOwnerGroup to {associatedVisitorGroupTitle}.");
                     web.AssociatedVisitorGroup.Title = associatedVisitorGroupTitle;
                     web.AssociatedVisitorGroup.Update();
